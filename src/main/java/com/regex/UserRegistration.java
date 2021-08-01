@@ -42,9 +42,26 @@ public class UserRegistration {
         }
     }
 
+    /**
+     * Added checkEmail method to match the email ids according to the given pattern.
+     */
+    public void checkEmail() {
+        System.out.println("Enter a valid email(Eg. abc.xyz@bl.com) : ");
+        String lastName = scanner.nextLine();
+        Pattern pattern = Pattern.compile("^[a-zA-Z0-9+_.-]{2,14}+@(.+).com$");
+        Matcher matcher = pattern.matcher((lastName));
+        boolean check = matcher.matches();
+        if (check) {
+            System.out.println("Email Id is Valid");
+        } else {
+            System.out.println(" Invalid!!Email-id...Please Enter a Valid one. ");
+        }
+    }
+
     public static void main(String[] args) {
         UserRegistration userRegistration = new UserRegistration();
         userRegistration.checkFirstName();
         userRegistration.checkLastName();
+        userRegistration.checkEmail();
     }
 }
