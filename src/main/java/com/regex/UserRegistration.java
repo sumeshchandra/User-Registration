@@ -58,10 +58,27 @@ public class UserRegistration {
         }
     }
 
-    public static void main(String[] args) {
+    /**
+     * This checkPhonenumber method will check the user input(Mobile Number) according to the pattern.
+     */
+    public void checkPhoneNumber() {
+        System.out.println("Enter Your Mobile Number (Eg. 91 9919819801) : ");
+        String phoneNumber = scanner.nextLine();
+        Pattern pattern = Pattern.compile("^[0-9]{1,2}\\s{1}[0-9]{10}");
+        Matcher matcher = pattern.matcher((phoneNumber));
+        boolean check = matcher.matches();
+        if (check) {
+            System.out.println("Number is Valid");
+        } else {
+            System.out.println(" Number is invalid!!Please Enter a Valid one.");
+        }
+    }
+
+        public static void main(String[] args) {
         UserRegistration userRegistration = new UserRegistration();
         userRegistration.checkFirstName();
         userRegistration.checkLastName();
         userRegistration.checkEmail();
+        userRegistration.checkPhoneNumber();
     }
 }
