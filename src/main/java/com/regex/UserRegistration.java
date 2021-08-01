@@ -82,7 +82,7 @@ public class UserRegistration {
     public void checkPassword() {
         System.out.println("Enter Password(8 character): ");
         String password = scanner.nextLine();
-        Pattern pattern = Pattern.compile("[a-z A-Z 0-9]{8,}$");
+        Pattern pattern = Pattern.compile("^(?=.*[A-Z]).{8,}$");
         Matcher matcher = pattern.matcher((password));
         boolean check = matcher.matches();
         if (check) {
