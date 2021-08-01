@@ -59,7 +59,7 @@ public class UserRegistration {
     }
 
     /**
-     * This checkPhonenumber method will check the user input(Mobile Number) according to the pattern.
+     * This checkPhoneNumber method will check the user input(Mobile Number) according to the pattern.
      */
     public void checkPhoneNumber() {
         System.out.println("Enter Your Mobile Number (Eg. 91 9919819801) : ");
@@ -74,11 +74,30 @@ public class UserRegistration {
         }
     }
 
+    /**
+     * UC5:This method is used to take the Password as input and
+     * checks if it is valid or not.
+     * Rule1: Minimum 8 characters
+     */
+    public void checkPassword() {
+        System.out.println("Enter Password(8 character): ");
+        String password = scanner.nextLine();
+        Pattern pattern = Pattern.compile("[a-z A-Z 0-9]{8,}$");
+        Matcher matcher = pattern.matcher((password));
+        boolean check = matcher.matches();
+        if (check) {
+            System.out.println("Password is Valid");
+        } else {
+            System.out.println(" Invalid Password!! Enter a valid one.");
+        }
+    }
+
         public static void main(String[] args) {
         UserRegistration userRegistration = new UserRegistration();
-        userRegistration.checkFirstName();
-        userRegistration.checkLastName();
-        userRegistration.checkEmail();
-        userRegistration.checkPhoneNumber();
+//        userRegistration.checkFirstName();
+//        userRegistration.checkLastName();
+//        userRegistration.checkEmail();
+//        userRegistration.checkPhoneNumber();
+        userRegistration.checkPassword();
     }
 }
