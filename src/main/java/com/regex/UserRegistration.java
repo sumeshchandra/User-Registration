@@ -62,7 +62,7 @@ public class UserRegistration {
      * This checkPhoneNumber method will check the user input(Mobile Number) according to the pattern.
      */
     public void checkPhoneNumber() {
-        System.out.println("Enter Your Mobile Number (Eg. 91 9919819801) : ");
+        System.out.println("Enter Your Mobile Number (Eg. 91 7008944265) : ");
         String phoneNumber = scanner.nextLine();
         Pattern pattern = Pattern.compile("^[0-9]{1,2}\\s{1}[0-9]{10}");
         Matcher matcher = pattern.matcher((phoneNumber));
@@ -83,7 +83,7 @@ public class UserRegistration {
      * Rule4: Should have exactly 1 special character.
      */
     public void checkPassword() {
-        System.out.println("Enter Password(8 character): ");
+        System.out.println("Enter Password(Have 8chars,1uppercase,1special char,number): ");
         String password = scanner.nextLine();
 //      Pattern pattern = Pattern.compile("[a-z A-Z 0-9]{8,}$"); //Rule 1
 //      Pattern pattern = Pattern.compile("^(?=.*[A-Z]).{8,}$"); // Rule 2
