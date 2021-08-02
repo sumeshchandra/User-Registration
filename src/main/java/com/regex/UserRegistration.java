@@ -98,12 +98,26 @@ public class UserRegistration {
         }
     }
 
-        public static void main(String[] args) {
+    public void givenEmailsCheck() {
+        System.out.println("Now Checking the given Emails............");
+        System.out.println(Pattern.matches("^[a-zA-Z0-9]+([+.-][a-zA-Z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]{2,4}([.][a-zA-Z]{2,4})?", "abc@yahoo.com"));
+        System.out.println(Pattern.matches("^[a-zA-Z0-9]+([+.-][a-zA-Z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]{2,4}([.][a-zA-Z]{2,4})?", "abc-100@yahoo.com"));
+        System.out.println(Pattern.matches("^[a-zA-Z0-9]+([+.-][a-zA-Z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]{2,4}([.][a-zA-Z]{2,4})?", "abc.100@yahoo.com"));
+        System.out.println(Pattern.matches("^[a-zA-Z0-9]+([+.-][a-zA-Z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]{2,4}([.][a-zA-Z]{2,4})?", "abc111@abc.com"));
+        System.out.println(Pattern.matches("^[a-zA-Z0-9]+([+.-][a-zA-Z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]{2,4}([.][a-zA-Z]{2,4})?", "abc-100@abc.net"));
+        System.out.println(Pattern.matches("^[a-zA-Z0-9]+([+.-][a-zA-Z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]{2,4}([.][a-zA-Z]{2,4})?", "abc.100@abc.com.au"));
+        System.out.println(Pattern.matches("^[a-zA-Z0-9]+([+.-][a-zA-Z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]{2,4}([.][a-zA-Z]{2,4})?", "abc@1.com"));
+        System.out.println(Pattern.matches("^[a-zA-Z0-9]+([+.-][a-zA-Z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]{2,4}([.][a-zA-Z]{2,4})?", "abc@gmail.com.com"));
+        System.out.println(Pattern.matches("^[a-zA-Z0-9]+([+.-][a-zA-Z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]{2,4}([.][a-zA-Z]{2,4})?", "abc+100@gmail.com"));
+    }
+
+    public static void main(String[] args) {
         UserRegistration userRegistration = new UserRegistration();
         userRegistration.checkFirstName();
         userRegistration.checkLastName();
         userRegistration.checkEmail();
         userRegistration.checkPhoneNumber();
         userRegistration.checkPassword();
+        userRegistration.givenEmailsCheck();
     }
 }
